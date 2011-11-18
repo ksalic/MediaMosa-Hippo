@@ -1,0 +1,122 @@
+.box {
+    margin: 0 auto;
+    width: 800px;
+    height: 600px;
+    border: 10px solid #000066;
+}
+
+.hippoexternal-browser-search {
+    padding: 5px 10px;
+}
+
+.hippoexternal-browser-search-input {
+    width: 700px;
+}
+
+.hippoexternal-browser-search-button {
+    width: 70px;
+}
+
+.hippoexternal-browser-results-summary {
+    padding: 0 10px;
+}
+
+.hippoexternal-browser-pager {
+    padding: 0 10px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.hippoexternal-browser-pager span span em span {
+    font-weight: bold;
+}
+
+.hippoexternal-browser-results {
+    overflow: auto;
+    height: 500px;
+}
+
+.hippoexternal-browser-result {
+    margin: 5px 0;
+    clear: left;
+    overflow: auto;
+    width: 100%;
+    float: left;
+    height: 123px;
+}
+
+.hippoexternal-browser-result-image {
+    float: left;
+    width: 138px;
+    height: 103px;
+    margin: 10px;
+    position: relative;
+}
+
+.hippoexternal-browser-result-duration {
+    position: absolute;
+    left: 2px;
+    bottom: 2px;
+    padding: 0 4px;
+    font-weight: bold;
+    font-size: 11px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background-color: black;
+    color: white !important;
+    height: 14px;
+    line-height: 14px;
+    opacity: 0.75;
+    filter: alpha(opacity = 75);
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+}
+
+.hippoexternal-browser-result-content {
+    margin: 5px;
+    width: 520px;
+    float: left;
+}
+
+p.result-content-description {
+    height: 60px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+p.facets {
+    margin: 5px 0;
+}
+
+.hippoexternal-browser-result h3 {
+    margin: 5px 0 5px;
+    font-size: 12px;
+    height: 14px;
+}
+
+.hippoexternal-browser-result-actions {
+    float: right;
+    width: 80px;
+}
+
+.hippoexternal-browser-result-actions input {
+    margin: 10px 0;
+    width: 70px;
+}
+
+.hex-even {
+
+}
+
+.hex-odd {
+
+}
+
+.hippoexternal-browser-result {
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px #888;
+    box-shadow: 0 0 5px #888;
+}

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" sv:name="externalResourceService">
+  <sv:property sv:name="jcr:primaryType" sv:type="Name">
+    <sv:value>frontend:plugin</sv:value>
+  </sv:property>
+  <sv:property sv:name="plugin.class" sv:type="String">
+    <sv:value>org.onehippo.forge.externalresource.api.service.ExternalResourceService</sv:value>
+  </sv:property>
+  <sv:property sv:name="video.processor.id" sv:type="String">
+    <sv:value>external.processor.service</sv:value>
+  </sv:property>
+  <sv:property sv:name="videos.username" sv:type="String">
+    <sv:value>admin</sv:value>
+  </sv:property>
+  <sv:property sv:name="videos.password" sv:type="String">
+    <sv:value>admin</sv:value>
+  </sv:property>
+  <sv:property sv:name="videos.url" sv:type="String">
+    <sv:value>http://10.10.100.121:5080/externalvideo/index.html</sv:value>
+  </sv:property>
+  <sv:node sv:name="hipporedfive:resource">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:pluginconfig</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.api.HippoRedFiveResourceManager</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>hipporedfive:resource</sv:value>
+    </sv:property>
+    <sv:property sv:name="url" sv:type="String">
+      <sv:value>http://10.10.100.153:5080/externalvideo/index.html</sv:value>
+    </sv:property>
+    <sv:property sv:name="username" sv:type="String">
+      <sv:value>admin</sv:value>
+    </sv:property>
+    <sv:property sv:name="password" sv:type="String">
+      <sv:value>admin</sv:value>
+    </sv:property>
+  </sv:node>
+  <sv:node sv:name="hippomediamosa:resource">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:pluginconfig</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.api.HippoMediaMosaResourceManager</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>hippomediamosa:resource</sv:value>
+    </sv:property>
+    <sv:property sv:name="url" sv:type="String">
+      <sv:value>http://10.10.100.164/mediamosa</sv:value>
+    </sv:property>
+    <sv:property sv:name="username" sv:type="String">
+      <sv:value>Hippo</sv:value>
+    </sv:property>
+    <sv:property sv:name="password" sv:type="String">
+      <sv:value>VERttUnK2fWlc0F3IceA21awRj</sv:value>
+    </sv:property>
+    <sv:property sv:name="createThumbnail" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="synchronization.enabled" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="synchronization.cronexpression" sv:type="String">
+      <sv:value>0 0/1 * 1/1 * ? *</sv:value>
+    </sv:property>
+  </sv:node>
+  <!--<sv:property sv:name="videos.id" sv:type="String">
+    <sv:value>service.videos</sv:value>
+  </sv:property>
+  <sv:property sv:name="videos.root" sv:type="String">
+    <sv:value>/content/videos</sv:value>
+  </sv:property>
+  <sv:node sv:name="hippoyoutube">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:pluginconfig</sv:value>
+    </sv:property>
+    <sv:property sv:name="account-username" sv:type="String">
+      <sv:value>username</sv:value>
+    </sv:property>
+    <sv:property sv:name="account-password" sv:type="String">
+      <sv:value>password</sv:value>
+    </sv:property>
+    <sv:property sv:name="automatically.start.video.on.page.load" sv:type="Boolean">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="automatically.start.video.buffering" sv:type="Boolean">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="override.auto.thumbnail.with.default" sv:type="Boolean">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="default.dimension" sv:type="String">
+      <sv:value>350x700</sv:value>
+    </sv:property>
+  </sv:node>-->
+</sv:node>
+

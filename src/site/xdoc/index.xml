@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC
+  "-//Apache Software Foundation//DTD XDOC 1.0//EN"
+  "http://maven.apache.org/dtd/xdoc_1_0.dtd">
+<!--
+    Copyright 2007-2008 Hippo
+    
+    Licensed under the Apache License, Version 2.0 (the  "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+    
+    http://www.apache.org/licenses/LICENSE-2.0
+    
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS"
+    BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<document>
+  <properties>
+    <title>Introduction</title>
+  </properties>
+  <body>
+  
+    <section name="Introduction">
+    
+      <subsection name="What is the External Resource Project?">
+        <p>An API which enables a developer to manage external resources in Hippo CMS</p>
+      </subsection>
+
+      <subsection name="What kind of external management does it support">
+        <p>We currently only support MediaMosa video platform integration</p>
+      </subsection>
+      
+      <subsection name="Info, screenshots and movies">
+        <p><a href="http://mediamosa.org/content/we-proudly-present-our-progress">Blog</a></p>
+        <p><a href="https://docs.google.com/a/1hippo.com/leaf?id=0BzScwss_smoSNDFmZTg3ZjktOWNiNi00MDBhLTlkOTQtMmRiNjVlY2Y4ZTVh&hl=en_US&pli=1">Movie 1</a></p>
+        <p><a href="https://docs.google.com/a/1hippo.com/leaf?id=0BzScwss_smoSMjNlNzI1ODMtNjE1Zi00MGM3LTg4ZWItNzQ1NGI1MGU3Y2E5&hl=en_US&hl=en_US&pli=1">Movie 2</a></p>
+      </subsection>
+      
+      <subsection name="Getting started">
+        <p>
+          <a href="install.html">Install</a> the external resource  Add-ons, and
+          <a href="usage.html">use it</a>!
+        </p>
+      </subsection>
+      
+      <subsection name="Project Status">
+        <p>The latest version of the External Resource Project is <b>1.07.00</b>. This version is compatible with
+           Hippo CMS 7.7 (release 2.21.00).</p>
+      </subsection>
+      
+    </section>
+  </body>
+</document>

@@ -1,0 +1,102 @@
+Media Mosa
+------------------------------------
+Uploaden
+
+1. Ga naar de sectie video bank
+2. Maak een nieuw map aan
+3. Selecteer via het context menu "upload nieuwe video"
+
+4. Selecteer "MediaMosa Video"
+5. Selecteer bestand(en)
+
+6. "OK"
+
+Video wordt geupload naar mediamosa, binnen hippo wordt een node aangemaakt die een identifier bevat naar het desbetreffende mediamosa asset.
+
+Let op, na het uploaden ook stills worden gemaakt. Stills zijn preview thumbnails voor het fimpje.
+Deze actie wordt op de achtergrond uitgevoerd en duurt ongeveer een minuut voordat het voltooid is. Na een minuut zal er ook in het CMS een thumbnail getoond worden.
+Voor sommige video's is het niet mogelijk om een still te maken (voornamelijk korte filmpjes)
+
+------------------------------------
+Interactie
+
+1. Zoek/Browse naar een MediaMosa video node binnen het CMS.
+2. Selecteer/klik een node zodat "view" informatie getoond wordt.
+3. Zie (synchronisatie) staat van desbetreffende video (Gesynchroniseer, Niet Gesynchroniseerd etc.)
+3.a Waneer staat niet op "Gesynchroniseerd" staat, probeer workflow acties "synchronisatie" > "update" aan te roepen.
+4. Klik op bewerken
+5. Verander titel en/of beschrijving.
+6. Klik op opslaan/opslaan en sluit
+
+Video metadata zoals titel en beschrijving wordt naar de MediaMosa instantie gepusht.
+
+------------------------------------
+Importeren
+
+1. Ga naar een map in de sectie video bank
+
+2a. Zoeken d.m.v. zoekterm invullen (zoekt alleen op titels)
+2b. Zoeken d.m.v. paging
+2c. Indien video bestaat, staat er "Browse". Deze sluit het venster en gaat direct naar het document in het CMS.
+
+3. Selecteer video's (checkbox op checken, op meerdere pagina's mogelijk)
+4. "Importeer"
+
+In het CMS worden node's aagemaakt met een identifier die linkt naar een mediamosa asset.
+
+Wanneer je bij "Interactie" een titel en beschrijving hebt ingevuld en je het desbetreffende document heb opgeslagen zie je in het importeren het desbetreffende item ingevuld met titel en beschrijving
+
+------------------------------------
+Synchroniseren
+
+Er zijn verschillende synchronisatie componenten.
+
+1. Document synchronisatie, zoals bescshreven bij "interactie" kun je de staat opvragen van het document als je deze opent.
+
+2. Synchronisatie overzicht, bij perspectief "reports" en item "synchronisation" kun je een lijstweergave zien van alle items die gesynchroniseerd kunnen worden.
+
+a. Je kunt de staat opvragen per item door op het ververs icoon te clicken.
+b. Je kunt bij Ongescynchroniseerde documenten een "update" uitvoeren om het document te synchroniseren.
+c. Je kunt bij Gebroken documenten een verwijder actie uitvoeren, waarbij het desbetreffende item zowel in de repository als in mediamosa (indien nog bestaat) wordt verwijderd
+
+3. Actergrond synchronisatie, je kunt in de console d.m.v. de external resource service configuratie synchronisatie taken aan- en uitzetten
+
+locatie Media Mosa configuratie:
+/hippo:configuration/hippo:frontend/cms/cms-services/externalResourceService/hippomediamosa:resource
+(om configuratie te laten werken moet je deze invullen > commit to repository en vervolgens in het cms inloggen om desbetreffende plugin te starten)
+
+a."synchronization.enabled" zorgt ervoor dat de synchronisatie aan staat.
+b."synchronization.cronexpression" zorgt ervoor dat de synchronisatie periodiek ingesteld kan worden d.m.v. een cron expressie.
+
+om configuratie te laten werken moet je waardes opslaan en vervolgens in het cms inloggen om desbetreffende plugin te starten/overschrijven.
+
+------------------------------------
+Still Manager
+
+Wordt gebruikt om te bepalen welke "preview thumbnail" (alswel still genoemd) wordt getoond voor het filmpje.
+
+1. Open een Media Mosa Video
+2. Bewerk
+3. Preview > click to edit
+4a. Genereer een plaatje op basis van secondes. Duurt een tijdje, progress paneel toont progressie per aanvraag toont uiteindelijk plaatje in de lijst.
+4b. Upload een plaatje.
+
+5. Selecteer een plaatje (default still heeft een groene border, nieuw geselecteerde heeft een grijze border)
+6. "OK"
+
+Geselecteerde plaatje wordt de nieuwe still.
+
+------------------------------------
+
+Rapporten
+
+Toont een aantal diverse rapporten. Bij perspectief "reports" en item "exernal resource statistics" kun je deze rapporten inzien.
+
+------------------------------------
+Site koppeling
+
+1. Open en bewerk een document (nieuws document)
+2. Selecteer een video/embedded
+3. Sla document op.
+4. Ga naar site, desbetreffende pagina van opgeslagen document.
+5. Zie video bestand.

@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sv:node sv:name="hippo-reports" xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:h="http://www.onehippo.org/jcr/xmlimport" h:merge="combine">
+  <sv:property sv:name="jcr:primaryType" sv:type="Name">
+    <sv:value>frontend:plugincluster</sv:value>
+  </sv:property>
+
+  <sv:node sv:name="statistics" h:merge="combine">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:plugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.panel.StatisticsReportPlugin</sv:value>
+    </sv:property>
+  </sv:node>
+
+  <!--
+  /statistics/playedstreams
+  params: year month play_type group_id owner_id limit offset
+  props: mediafile_id asset_id owner_id group_id filesize container_type play_type played -->
+  <sv:node sv:name="mm-played-streams">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:plugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="auto.expand.column" sv:type="String">
+      <sv:value>mediafileId</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="columns" sv:type="String">
+      <sv:value>played</sv:value>
+      <sv:value>mediafileId</sv:value>
+      <sv:value>filesize</sv:value>
+      <sv:value>containerType</sv:value>
+      <sv:value>ownerId</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="service.parameter.names" sv:type="String">
+      <sv:value>year</sv:value>
+      <sv:value>month</sv:value>
+      <sv:value>playType</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="service.parameter.values" sv:type="String">
+      <sv:value>{currentYear}</sv:value>
+      <sv:value>{currentMonth}</sv:value>
+      <sv:value>object</sv:value>
+    </sv:property>
+    <sv:property sv:name="page.size" sv:type="Long">
+      <sv:value>10</sv:value>
+    </sv:property>
+    <sv:property sv:name="paging" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.list.StatisticsListPlugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="statistics.provider.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.MMPlayedStreamsStatisticsProvider</sv:value>
+    </sv:property>
+    <sv:property sv:name="translator.id" sv:type="String">
+      <sv:value>service.reports.mm-played-streams.translator</sv:value>
+    </sv:property>
+    <sv:property sv:name="wicket.id" sv:type="String">
+      <sv:value>service.reports.statistics</sv:value>
+    </sv:property>
+  </sv:node>
+  <sv:node sv:name="mm-played-streams.translator">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:plugin</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+      <sv:value>hippostd:translated</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.hippoecm.frontend.i18n.ConfigTraversingPlugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="translator.id" sv:type="String">
+      <sv:value>service.reports.mm-played-streams.translator</sv:value>
+    </sv:property>
+    <sv:node sv:name="hippostd:translations">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hippostd:translations</sv:value>
+      </sv:property>
+      <sv:node sv:name="no-data">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>frontend:pluginconfig</sv:value>
+        </sv:property>
+        <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+          <sv:value>hippo:translated</sv:value>
+        </sv:property>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>en</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Data not available</sv:value>
+          </sv:property>
+        </sv:node>
+         <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>nl</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Gegevens niet beschikbaar</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+      <sv:node sv:name="title">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>frontend:pluginconfig</sv:value>
+        </sv:property>
+        <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+          <sv:value>hippo:translated</sv:value>
+        </sv:property>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>en</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Played Streams</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>nl</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Gespeelde Streams</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+
+  <!--
+  /statistics/datausagevideo
+  params: year month type limit offset
+  props: container_type user_id group_id app_id diskspace_mb-->
+  <sv:node sv:name="mm-data-usage-video">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:plugin</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="columns" sv:type="String">
+      <sv:value>containerType</sv:value>
+      <sv:value>userId</sv:value>
+      <sv:value>groupId</sv:value>
+      <sv:value>type</sv:value>
+      <sv:value>appId</sv:value>
+      <sv:value>diskspaceMb</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="service.parameter.names" sv:type="String">
+      <sv:value>year</sv:value>
+      <sv:value>month</sv:value>
+      <sv:value>type</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="service.parameter.values" sv:type="String">
+      <sv:value>{currentYear}</sv:value>
+      <sv:value>{currentMonth}</sv:value>
+      <sv:value>container</sv:value>
+    </sv:property>
+    <sv:property sv:name="page.size" sv:type="Long">
+      <sv:value>10</sv:value>
+    </sv:property>
+    <sv:property sv:name="paging" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.list.StatisticsListPlugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="statistics.provider.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.MMDataUsageVideoStatisticsProvider</sv:value>
+    </sv:property>
+    <sv:property sv:name="translator.id" sv:type="String">
+      <sv:value>service.reports.mm-data-usage-video.translator</sv:value>
+    </sv:property>
+    <sv:property sv:name="wicket.id" sv:type="String">
+      <sv:value>service.reports.statistics</sv:value>
+    </sv:property>
+  </sv:node>
+  <sv:node sv:name="mm-data-usage-video.translator">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:plugin</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+      <sv:value>hippostd:translated</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.hippoecm.frontend.i18n.ConfigTraversingPlugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="translator.id" sv:type="String">
+      <sv:value>service.reports.mm-data-usage-video.translator</sv:value>
+    </sv:property>
+    <sv:node sv:name="hippostd:translations">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hippostd:translations</sv:value>
+      </sv:property>
+      <sv:node sv:name="no-data">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>frontend:pluginconfig</sv:value>
+        </sv:property>
+        <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+          <sv:value>hippo:translated</sv:value>
+        </sv:property>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>en</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Data not available</sv:value>
+          </sv:property>
+        </sv:node>
+         <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>nl</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Gegevens niet beschikbaar</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+      <sv:node sv:name="title">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>frontend:pluginconfig</sv:value>
+        </sv:property>
+        <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+          <sv:value>hippo:translated</sv:value>
+        </sv:property>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>en</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Data Usage Video Statistics</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>nl</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Data Usage Video Statistieken</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+
+  <!--
+  /statistics/dataupload
+  params: year month userId groupId limit offset
+  props: appId ownerId groupId filesize timestamp-->
+  <sv:node sv:name="mm-data-upload">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:plugin</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="columns" sv:type="String">
+      <sv:value>appId</sv:value>
+      <sv:value>ownerId</sv:value>
+      <sv:value>groupId</sv:value>
+      <sv:value>fileSize</sv:value>
+      <sv:value>timestamp</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="service.parameter.names" sv:type="String">
+      <sv:value>year</sv:value>
+      <sv:value>month</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="service.parameter.values" sv:type="String">
+      <sv:value>{currentYear}</sv:value>
+      <sv:value>{currentMonth}</sv:value>
+    </sv:property>
+    <sv:property sv:name="page.size" sv:type="Long">
+      <sv:value>10</sv:value>
+    </sv:property>
+    <sv:property sv:name="paging" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.list.StatisticsListPlugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="statistics.provider.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.MMDataUploadStatisticsProvider</sv:value>
+    </sv:property>
+    <sv:property sv:name="translator.id" sv:type="String">
+      <sv:value>service.reports.mm-data-upload.translator</sv:value>
+    </sv:property>
+    <sv:property sv:name="wicket.id" sv:type="String">
+      <sv:value>service.reports.statistics</sv:value>
+    </sv:property>
+  </sv:node>
+  <sv:node sv:name="mm-data-upload.translator">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:plugin</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+      <sv:value>hippostd:translated</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.hippoecm.frontend.i18n.ConfigTraversingPlugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="translator.id" sv:type="String">
+      <sv:value>service.reports.mm-data-upload.translator</sv:value>
+    </sv:property>
+    <sv:node sv:name="hippostd:translations">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hippostd:translations</sv:value>
+      </sv:property>
+      <sv:node sv:name="no-data">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>frontend:pluginconfig</sv:value>
+        </sv:property>
+        <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+          <sv:value>hippo:translated</sv:value>
+        </sv:property>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>en</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Data not available</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>nl</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Gegevens niet beschikbaar</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+      <sv:node sv:name="title">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>frontend:pluginconfig</sv:value>
+        </sv:property>
+        <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+          <sv:value>hippo:translated</sv:value>
+        </sv:property>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>en</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Data Upload Statistics</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>nl</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Data Upload Statistieken</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+
+  <!--
+  /statistics/popular collections
+  params: -
+  props: collId ownerId title description created count -->
+  <sv:node sv:name="mm-popular-collections">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:plugin</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="columns" sv:type="String">
+      <sv:value>collId</sv:value>
+      <sv:value>ownerId</sv:value>
+      <sv:value>title</sv:value>
+      <sv:value>description</sv:value>
+      <sv:value>created</sv:value>
+      <sv:value>count</sv:value>
+    </sv:property>
+    <sv:property sv:name="auto.expand.column" sv:type="String">
+      <sv:value>title</sv:value>
+    </sv:property>
+    <sv:property sv:name="page.size" sv:type="Long">
+      <sv:value>10</sv:value>
+    </sv:property>
+    <sv:property sv:name="paging" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.list.StatisticsListPlugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="statistics.provider.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.MMPopularCollectionsStatisticsProvider</sv:value>
+    </sv:property>
+    <sv:property sv:name="translator.id" sv:type="String">
+      <sv:value>service.reports.mm-popular-collections.translator</sv:value>
+    </sv:property>
+    <sv:property sv:name="wicket.id" sv:type="String">
+      <sv:value>service.reports.statistics</sv:value>
+    </sv:property>
+  </sv:node>
+  <sv:node sv:name="mm-popular-collections.translator">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:plugin</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+      <sv:value>hippostd:translated</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.hippoecm.frontend.i18n.ConfigTraversingPlugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="translator.id" sv:type="String">
+      <sv:value>service.reports.mm-popular-collections.translator</sv:value>
+    </sv:property>
+    <sv:node sv:name="hippostd:translations">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hippostd:translations</sv:value>
+      </sv:property>
+      <sv:node sv:name="no-data">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>frontend:pluginconfig</sv:value>
+        </sv:property>
+        <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+          <sv:value>hippo:translated</sv:value>
+        </sv:property>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>en</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Data not available</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>nl</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Gegevens niet beschikbaar</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+      <sv:node sv:name="title">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>frontend:pluginconfig</sv:value>
+        </sv:property>
+        <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+          <sv:value>hippo:translated</sv:value>
+        </sv:property>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>en</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Popular Collections</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>nl</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Populaire Collecties</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+
+  <!--
+/statistics/popular collections
+params: limit offset order_by order_direction
+props: mediafileId, ownerId, groupId, filename, assetId, requested, appId -->
+  <sv:node sv:name="mm-popular-streams">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:plugin</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="columns" sv:type="String">
+      <sv:value>mediafileId</sv:value>
+      <sv:value>filename</sv:value>
+      <sv:value>requested</sv:value>
+    </sv:property>
+    <sv:property sv:name="auto.expand.column" sv:type="String">
+      <sv:value>filename</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="service.parameter.names" sv:type="String">
+      <sv:value>orderBy</sv:value>
+      <sv:value>orderDirection</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="service.parameter.values" sv:type="String">
+      <sv:value>created</sv:value>
+      <sv:value>asc</sv:value>
+    </sv:property>
+    <sv:property sv:name="page.size" sv:type="Long">
+      <sv:value>10</sv:value>
+    </sv:property>
+    <sv:property sv:name="paging" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.list.StatisticsListPlugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="statistics.provider.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.MMPopularMediaFilesStatisticsProvider</sv:value>
+    </sv:property>
+    <sv:property sv:name="translator.id" sv:type="String">
+      <sv:value>service.reports.mm-popular-streams.translator</sv:value>
+    </sv:property>
+    <sv:property sv:name="wicket.id" sv:type="String">
+      <sv:value>service.reports.statistics</sv:value>
+    </sv:property>
+  </sv:node>
+  <sv:node sv:name="mm-popular-streams.translator">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:plugin</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+      <sv:value>hippostd:translated</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.hippoecm.frontend.i18n.ConfigTraversingPlugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="translator.id" sv:type="String">
+      <sv:value>service.reports.mm-popular-streams.translator</sv:value>
+    </sv:property>
+    <sv:node sv:name="hippostd:translations">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hippostd:translations</sv:value>
+      </sv:property>
+      <sv:node sv:name="no-data">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>frontend:pluginconfig</sv:value>
+        </sv:property>
+        <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+          <sv:value>hippo:translated</sv:value>
+        </sv:property>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>en</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Data not available</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>nl</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Gegevens niet beschikbaar</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+      <sv:node sv:name="title">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>frontend:pluginconfig</sv:value>
+        </sv:property>
+        <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+          <sv:value>hippo:translated</sv:value>
+        </sv:property>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>en</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Popular Media Files</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>nl</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Populaire Media Bestanden</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+
+
+  <!-- CHART REPORTS -->
+  <sv:node sv:name="mm-video-type-distribution">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:plugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.chart.StatisticsChartPlugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="store.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.chart.StatisticsChartStore</sv:value>
+    </sv:property>
+    <sv:property sv:name="statistics.provider.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.MMDataUsageVideoStatisticsProvider</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="service.parameter.names" sv:type="String">
+      <sv:value>year</sv:value>
+      <sv:value>month</sv:value>
+      <sv:value>type</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="service.parameter.values" sv:type="String">
+      <sv:value>{currentYear}</sv:value>
+      <sv:value>{currentMonth}</sv:value>
+      <sv:value>container</sv:value>
+    </sv:property>
+    <sv:property sv:name="chart.type" sv:type="String">
+      <sv:value>pie</sv:value>
+    </sv:property>
+    <sv:property sv:name="legend.position" sv:type="String">
+      <sv:value>right</sv:value>
+    </sv:property>
+    <sv:property sv:name="translator.id" sv:type="String">
+      <sv:value>service.reports.mm-video-type-distribution.translator</sv:value>
+    </sv:property>
+    <sv:property sv:name="wicket.id" sv:type="String">
+      <sv:value>service.reports.statistics</sv:value>
+    </sv:property>
+  </sv:node>
+
+  <sv:node sv:name="mm-video-type-distribution.translator">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:plugin</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+      <sv:value>hippostd:translated</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.hippoecm.frontend.i18n.ConfigTraversingPlugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="translator.id" sv:type="String">
+      <sv:value>service.reports.mm-video-type-distribution.translator</sv:value>
+    </sv:property>
+    <sv:node sv:name="hippostd:translations">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hippostd:translations</sv:value>
+      </sv:property>
+      <sv:node sv:name="no-data">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>frontend:pluginconfig</sv:value>
+        </sv:property>
+        <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+          <sv:value>hippo:translated</sv:value>
+        </sv:property>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>en</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Data not available</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>nl</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Gegevens niet beschikbaar</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+      <sv:node sv:name="title">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>frontend:pluginconfig</sv:value>
+        </sv:property>
+        <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+          <sv:value>hippo:translated</sv:value>
+        </sv:property>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>en</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Video Type Distribution (Diskspace per type)</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>nl</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Video Type Distributie (Diskspace per type)</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+
+  <sv:node sv:name="mm-played-videos-per-type-for-group-hippo">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:plugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="chart.type" sv:type="String">
+      <sv:value>column</sv:value>
+    </sv:property>
+    <sv:property sv:name="legend.position" sv:type="String">
+      <sv:value>right</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.chart.StatisticsChartPlugin</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="service.parameter.names" sv:type="String">
+      <sv:value>year</sv:value>
+      <sv:value>month</sv:value>
+      <sv:value>playType</sv:value>
+      <sv:value>groupId</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="service.parameter.values" sv:type="String">
+      <sv:value>{currentYear}</sv:value>
+      <sv:value>{currentMonth}</sv:value>
+      <sv:value>object</sv:value>
+      <sv:value>Hippo</sv:value>
+    </sv:property>
+    <sv:property sv:name="statistics.provider.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.MMPlayedStreamsStatisticsProvider</sv:value>
+    </sv:property>
+    <sv:property sv:name="store.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.chart.StatisticsChartStore</sv:value>
+    </sv:property>
+    <sv:property sv:name="translator.id" sv:type="String">
+      <sv:value>service.reports.mm-played-videos-per-type-for-group-hippo.translator</sv:value>
+    </sv:property>
+    <sv:property sv:name="wicket.id" sv:type="String">
+      <sv:value>service.reports.statistics</sv:value>
+    </sv:property>
+  </sv:node>
+
+  <sv:node sv:name="mm-played-videos-per-type-for-group-hippo.translator">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:plugin</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+      <sv:value>hippostd:translated</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.hippoecm.frontend.i18n.ConfigTraversingPlugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="translator.id" sv:type="String">
+      <sv:value>service.reports.mm-played-videos-per-type-for-group-hippo.translator</sv:value>
+    </sv:property>
+    <sv:node sv:name="hippostd:translations">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hippostd:translations</sv:value>
+      </sv:property>
+      <sv:node sv:name="no-data">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>frontend:pluginconfig</sv:value>
+        </sv:property>
+        <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+          <sv:value>hippo:translated</sv:value>
+        </sv:property>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>en</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Data not available</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>nl</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Gegevens niet beschikbaar</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+      <sv:node sv:name="title">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>frontend:pluginconfig</sv:value>
+        </sv:property>
+        <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+          <sv:value>hippo:translated</sv:value>
+        </sv:property>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>en</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Played Videos per Type for Group: Hippo</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>nl</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Afgespeelde Videos per Type voor Group: Hippo</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+
+  <sv:node sv:name="mm-uploaded-videos-per-group">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:plugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="chart.type" sv:type="String">
+      <sv:value>bar</sv:value>
+    </sv:property>
+    <sv:property sv:name="legend.position" sv:type="String">
+      <sv:value>right</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.chart.StatisticsChartPlugin</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="service.parameter.names" sv:type="String">
+      <sv:value>year</sv:value>
+      <sv:value>month</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="service.parameter.values" sv:type="String">
+      <sv:value>{currentYear}</sv:value>
+      <sv:value>{currentMonth}</sv:value>
+    </sv:property>
+    <sv:property sv:name="statistics.provider.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.MMDataUploadStatisticsProvider</sv:value>
+    </sv:property>
+    <sv:property sv:name="store.class" sv:type="String">
+      <sv:value>org.onehippo.forge.externalresource.reports.plugins.statistics.chart.StatisticsChartStore</sv:value>
+    </sv:property>
+    <sv:property sv:name="translator.id" sv:type="String">
+      <sv:value>service.reports.mm-uploaded-videos-per-group.translator</sv:value>
+    </sv:property>
+    <sv:property sv:name="wicket.id" sv:type="String">
+      <sv:value>service.reports.statistics</sv:value>
+    </sv:property>
+  </sv:node>
+  <sv:node sv:name="mm-uploaded-videos-per-group.translator">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:plugin</sv:value>
+    </sv:property>
+    <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+      <sv:value>hippostd:translated</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>org.hippoecm.frontend.i18n.ConfigTraversingPlugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="translator.id" sv:type="String">
+      <sv:value>service.reports.mm-uploaded-videos-per-group.translator</sv:value>
+    </sv:property>
+    <sv:node sv:name="hippostd:translations">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hippostd:translations</sv:value>
+      </sv:property>
+      <sv:node sv:name="no-data">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>frontend:pluginconfig</sv:value>
+        </sv:property>
+        <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+          <sv:value>hippo:translated</sv:value>
+        </sv:property>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>en</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Data not available</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>nl</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Gegevens niet beschikbaar</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+      <sv:node sv:name="title">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>frontend:pluginconfig</sv:value>
+        </sv:property>
+        <sv:property sv:multiple="true" sv:name="jcr:mixinTypes" sv:type="Name">
+          <sv:value>hippo:translated</sv:value>
+        </sv:property>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>en</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Total Uploaded Diskspace per Group</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="hippo:translation">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>hippo:translation</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:language" sv:type="String">
+            <sv:value>nl</sv:value>
+          </sv:property>
+          <sv:property sv:name="hippo:message" sv:type="String">
+            <sv:value>Totaal Geuploade Diskspace per Group</sv:value>
+          </sv:property>
+        </sv:node>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+</sv:node>

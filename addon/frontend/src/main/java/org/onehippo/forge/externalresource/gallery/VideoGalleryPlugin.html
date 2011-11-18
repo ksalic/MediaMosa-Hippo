@@ -1,0 +1,41 @@
+<!--
+  * Copyright 2010 Hippo
+  *
+  * Licensed under the Apache License, Version 2.0 (the  "License");
+  * you may not use this file except in compliance with the License.
+  * You may obtain a copy of the License at
+  *
+  * http://www.apache.org/licenses/LICENSE-2.0
+  *
+  * Unless required by applicable law or agreed to in writing, software
+  * distributed under the License is distributed on an "AS IS" BASIS,
+  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  * See the License for the specific language governing permissions and
+  * limitations under the License.
+-->
+<html xmlns:wicket="http://wicket.apache.org/">
+<wicket:panel>
+    <div class="toggle-button" wicket:id="buttons">
+        <a wicket:id="toggle">
+            <img wicket:id="toggleimg"/>
+        </a>
+        <a wicket:id="toggleFullscreen">
+            <img wicket:id="toggleFullscreenImage"/>
+        </a>
+    </div>
+    <div class="hippo-list-details" cellspacing="0" wicket:id="table" width="100%">[table]</div>
+    <div class="video-wrapper" style="clear:both;">
+        <ul wicket:id="video-list" class="video-list">
+
+            <li wicket:id="video-item" class="video-item">
+                <a wicket:id="itemLink">
+                    <div wicket:id="thumbnail" class="img-wrapper"></div>
+                    <div><img wicket:id="folder-icon" class="folder-icon"/></div>
+                    <br/><span wicket:id="title" class="video-title">Video Title</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</wicket:panel>
+</html>

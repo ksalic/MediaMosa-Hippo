@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC
+        "-//Apache Software Foundation//DTD XDOC 1.0//EN"
+        "http://maven.apache.org/dtd/xdoc_1_0.dtd">
+<!--
+    Copyright 2011 Hippo
+    
+    Licensed under the Apache License, Version 2.0 (the  "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+    
+    http://www.apache.org/licenses/LICENSE-2.0
+    
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS"
+    BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<document>
+  <properties>
+    <title>Using the External Resource Add-on</title>
+  </properties>
+  <body>
+    <section name="Using the MediaMosa Video Platform">
+
+      <subsection name="Download manual (NL)">
+        <p>
+          <a href="MANUAL_NL">Manual</a>
+        </p>
+        <p>
+          Don't forget first to have a media mosa instance running and insert credential info at: <b>/hippo:configuration/hippo:frontend/cms/cms-services/externalResourceService/hippomediamosa:resource</b>
+        </p>
+      </subsection>
+
+    </section>
+  </body>
+</document>

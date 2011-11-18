@@ -1,0 +1,49 @@
+<'nt'='http://www.jcp.org/jcr/nt/1.0'>
+<'hippoexternal'='http://www.hippoecm.org/hippoexternal/nt/1.0'>
+<'hippostd'='http://www.onehippo.org/jcr/hippostd/nt/2.0'>
+<'hippostdpubwf'='http://www.onehippo.org/jcr/hippostdpubwf/nt/1.0'>
+<'hippo'='http://www.onehippo.org/jcr/hippo/nt/2.0'>
+<'frontend'='http://www.onehippo.org/jcr/frontend/nt/2.0'>
+<'hippogallery'='http://www.onehippo.org/jcr/hippogallery/nt/2.0'>
+
+[hippoexternal:link] > hippo:facetselect
+
+[hippoexternal:embedded]
+- hippoexternal:embedded (string)
+
+/*[hippoexternal:embeddable]
++ hippoexternal:embedded (hippoexternal:embedded)*/
+
+[hippoexternal:folder] > hippostd:gallery  orderable
+
+[hippoexternal:resource] > hippo:document orderable
+- hippoexternal:name (string)
+- hippoexternal:mimeType (string) mandatory
+- hippoexternal:lastModified (date)
+- hippoexternal:size (long)
+
+[hippoexternal:displayimage] > hippo:resource
+
+[hippoexternal:video] >  hippoexternal:resource
+- hippoexternal:title (string)
+- hippoexternal:description (string)
+- hippoexternal:width (long)
+- hippoexternal:height (long)
+- hippoexternal:duration (string)
++ hippoexternal:thumbnail (hippoexternal:displayimage) = hippoexternal:displayimage primary mandatory autocreated
++ hippoexternal:embedded (hippoexternal:embedded)
+
+[hippoexternal:synchronizable]
+- hippoexternal:lastModifiedSyncDate (date)
+- hippoexternal:state (string) = 'synchronized' mandatory < 'synchronized','unsynchronized','broken','unknown','inprogress','waiting','busy'
+
+[hippoexternal:authorisationconfig] > frontend:pluginconfig
+- hippoexternal:privileges (string) multiple
+
+[hippoexternal:authorisation] > frontend:pluginconfig
++ * (hippoexternal:authorisationconfig) multiple
+
+
+
+
+

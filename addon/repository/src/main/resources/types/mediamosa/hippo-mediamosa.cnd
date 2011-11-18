@@ -1,0 +1,6 @@
+<'hippoexternal'='http://www.hippoecm.org/hippoexternal/nt/1.0'>
+<'hippomediamosa'='http://www.hippoecm.org/nt/hippomediamosa/1.0'>
+
+[hippomediamosa:resource] > hippoexternal:video, hippoexternal:synchronizable
+- hippomediamosa:assetid  (string)
+- hippomediamosa:mediaid (string)

@@ -1,0 +1,37 @@
+.hippo-list-details tr th.video-gallery-icon,
+.hippo-list-details tr td.video-gallery-icon {
+  width: 16px;
+}
+
+.hippo-list-details tr th.video-width,
+.hippo-list-details tr td.video-width {
+  width: 65px;
+}
+
+.hippo-list-details tr th.video-height,
+.hippo-list-details tr td.video-height {
+  width: 65px;
+}
+
+.hippo-list-details tr th.video-mimetype,
+.hippo-list-details tr td.video-mimetype{
+  width: 80px;
+}
+
+.hippo-list-details tr th.video-size,
+.hippo-list-details tr td.video-size{
+  width: 80px;
+}
+
+.hippo-list-details tr th.video-lastmodified,
+.hippo-list-details tr td.video-lastmodified{
+  width: 120px;
+}
+
+.hipporedfive-resource {
+  background-image: url("icon/red5.png")
+}
+
+.hippoyoutube-resource {
+  background-image: url("icon/youtube.png")
+}

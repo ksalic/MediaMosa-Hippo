@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sv:node xmlns:hippoexternal="http://www.hippoecm.org/hippoexternal/nt/1.0" xmlns:hipporedfive="http://www.hippoecm.org/nt/hipporedfive/1.0" xmlns:frontend="http://www.onehippo.org/jcr/frontend/nt/2.0" xmlns:sv="http://www.jcp.org/jcr/sv/1.0" sv:name="hipporedfive:resource">
+  <sv:property sv:name="jcr:primaryType" sv:type="Name">
+    <sv:value>frontend:pluginconfig</sv:value>
+  </sv:property>
+  <sv:property sv:name="password" sv:type="String">
+    <sv:value>admin</sv:value>
+  </sv:property>
+  <sv:property sv:name="plugin.class" sv:type="String">
+    <sv:value>org.onehippo.forge.externalresource.api.HippoRedFiveResourceManager</sv:value>
+  </sv:property>
+  <sv:property sv:name="type" sv:type="String">
+    <sv:value>hipporedfive:resource</sv:value>
+  </sv:property>
+  <sv:property sv:name="url" sv:type="String">
+    <sv:value>http://10.10.100.153:5080/externalvideo/index.html</sv:value>
+  </sv:property>
+  <sv:property sv:name="username" sv:type="String">
+    <sv:value>admin</sv:value>
+  </sv:property>
+  <sv:node sv:name="authorization">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hippoexternal:authorisation</sv:value>
+    </sv:property>
+    <sv:property sv:name="url" sv:type="String">
+      <sv:value>http://blablbala</sv:value>
+    </sv:property>
+    <sv:node sv:name="admin">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hippoexternal:authorisationconfig</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippoexternal:privileges" sv:type="String" sv:multiple="true">
+        <sv:value>admin</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="editor">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hippoexternal:authorisationconfig</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippoexternal:privileges" sv:type="String" sv:multiple="true">
+        <sv:value>editor</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+</sv:node>

@@ -1,0 +1,5 @@
+<'hippoexternal'='http://www.hippoecm.org/hippoexternal/nt/1.0'>
+<'hippoyoutube'='http://www.hippoecm.org/nt/hippoyoutube/1.0'>
+
+[hippoyoutube:resource] > hippoexternal:video
+- hippoyoutube:id

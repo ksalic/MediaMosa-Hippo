@@ -1,0 +1,58 @@
+.box {
+    margin: 0 auto;
+    width: 800px;
+    border: 1px solid #000066;
+    height: 600px;
+}
+
+.external-resource-mediamosa-top {
+    height: 100px;
+    overflow: auto;
+    clear: right;
+}
+
+#external-resource-mediamosa-still-upload {
+    width: 360px;
+    float: left;
+    padding: 0 20px;
+}
+
+#external-resource-mediamosa-still-generation {
+     width: 360px;
+    float: right;
+    padding: 0 20px;
+}
+
+#external-resource-mediamosa-still-progress {
+    max-height: 30px;
+}
+
+#external-resource-mediamosa-still-progress ul{
+    overflow: auto;
+    margin: 0;
+    padding: 0 20px;
+}
+
+#external-resource-mediamosa-still-progress ul li{
+    float: left;
+    margin-right: 20px;
+    border: 1px solid;
+    display: block;
+    padding: 5px;
+}
+
+#external-resource-mediamosa-still-progress ul li span {
+}
+
+#external-resource-mediamosa-still-list {
+    padding: 20px;
+    margin-top: 10px;
+    overflow: auto;
+}
+
+.external-resource-mediamosa-still-list-item {
+    float: left;
+    border: 1px;
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+}

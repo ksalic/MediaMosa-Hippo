@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sv:node sv:name="videogallery" xmlns:sv="http://www.jcp.org/jcr/sv/1.0">
+  <sv:property sv:name="jcr:primaryType" sv:type="Name">
+    <sv:value>hipposys:deriveddefinition</sv:value>
+  </sv:property>
+  <sv:property sv:name="hipposys:classname" sv:type="String">
+    <sv:value>org.onehippo.forge.externalresource.gallery.deriveddata.ThumbnailGenerator</sv:value>
+  </sv:property>
+  <sv:property sv:name="hipposys:nodetype" sv:type="String">
+    <sv:value>hippoexternal:resource2</sv:value>
+  </sv:property>
+  <sv:property sv:name="hipposys:serialver" sv:type="Long">
+    <sv:value>1</sv:value>
+  </sv:property>
+  <sv:node sv:name="hipposys:accessed">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hipposys:propertyreferences</sv:value>
+    </sv:property>
+    <sv:node sv:name="name">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hipposys:relativepropertyreference</sv:value>
+      </sv:property>
+      <sv:property sv:name="hipposys:relPath" sv:type="String">
+        <sv:value>hippoexternal:name</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="preview">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hipposys:relativepropertyreference</sv:value>
+      </sv:property>
+      <sv:property sv:name="hipposys:relPath" sv:type="String">
+        <sv:value>hippoexternal:preview/jcr:data</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="title">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hipposys:relativepropertyreference</sv:value>
+      </sv:property>
+      <sv:property sv:name="hipposys:relPath" sv:type="String">
+        <sv:value>hippoexternal:title</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="mimeType">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hipposys:relativepropertyreference</sv:value>
+      </sv:property>
+      <sv:property sv:name="hipposys:relPath" sv:type="String">
+        <sv:value>hippoexternal:preview/jcr:mimeType</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="lastModified">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hipposys:relativepropertyreference</sv:value>
+      </sv:property>
+      <sv:property sv:name="hipposys:relPath" sv:type="String">
+        <sv:value>hippoexternal:preview/jcr:lastModified</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="hipposys:derived">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hipposys:propertyreferences</sv:value>
+    </sv:property>
+    <sv:node sv:name="name">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hipposys:relativepropertyreference</sv:value>
+      </sv:property>
+      <sv:property sv:name="hipposys:relPath" sv:type="String">
+        <sv:value>hippoexternal:name</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="thumbnail">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hipposys:relativepropertyreference</sv:value>
+      </sv:property>
+      <sv:property sv:name="hipposys:relPath" sv:type="String">
+        <sv:value>hippoexternal:thumbnail/jcr:data</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="title">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hipposys:relativepropertyreference</sv:value>
+      </sv:property>
+      <sv:property sv:name="hipposys:relPath" sv:type="String">
+        <sv:value>hippoexternal:title</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="mimeType">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hipposys:relativepropertyreference</sv:value>
+      </sv:property>
+      <sv:property sv:name="hipposys:relPath" sv:type="String">
+        <sv:value>hippoexternal:thumbnail/jcr:mimeType</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="lastModified">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hipposys:relativepropertyreference</sv:value>
+      </sv:property>
+      <sv:property sv:name="hipposys:relPath" sv:type="String">
+        <sv:value>hippoexternal:thumbnail/jcr:lastModified</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="date">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hipposys:relativepropertyreference</sv:value>
+      </sv:property>
+      <sv:property sv:name="hipposys:relPath" sv:type="String">
+        <sv:value>hippoexternal:lastModified</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+</sv:node>
